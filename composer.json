@@ -1,0 +1,48 @@
+{
+    "name": "leuchtfeuer/typo3-audience-studio",
+    "description": "Add-on TYPO3 extension that enhances the \"EXT:marketing_automation\" TYPO3 extension by connecting it to Salseforce Audience Studio",
+    "keywords": [
+        "TYPO3 CMS",
+        "Marketing",
+        "Automation",
+        "Salesforce",
+        "Audience Studio"
+    ],
+    "type": "typo3-cms-extension",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://www.Leuchtfeuer.com",
+    "authors": [
+        {
+            "name": "Florian Wessels",
+            "email": "f.wessels@Leuchtfeuer.com",
+            "role": "Developer",
+            "homepage": "https://www.Leuchtfeuer.com"
+        },
+        {
+            "name": "Helmut Hummel",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "aws/aws-sdk-php": "^3.158",
+        "keboola/csv": "^2.2",
+        "leuchtfeuer/marketing-automation": "*",
+        "typo3/cms-core": "^9.5.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Leuchtfeuer\\Typo3AudienceStudio\\": "Classes/"
+        }
+    },
+    "config": {
+        "vendor-dir": ".Build/vendor",
+        "bin-dir": ".Build/bin"
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "audience_studio",
+            "app-dir": ".Build",
+            "web-dir": ".Build/public"
+        }
+    }
+}
