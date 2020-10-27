@@ -13,6 +13,12 @@ Don't forget to activate the extension in the TYPO3 Extension Manager.
 
 ## Configuration
 
+### Adding the [Control Tag](https://konsole.zendesk.com/hc/en-us/articles/215557298-Control-Tag-Implementation-Guide)
+
+This adapter does not take care of adding the control tag the the HTML output of your website.
+Make sure to add it and verify that a cookie with name `KUID` is set for your website domain.
+The adapter relies on this cookie to be present and set.
+
 ### S3 Access configuration
 
 Put the following TYPO3 configuration into AdditionalConfiguration.php or any other appropriate place.
