@@ -2,6 +2,9 @@
 declare(strict_types=1);
 namespace Leuchtfeuer\Typo3AudienceStudio;
 
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 class Configuration
 {
     /**
@@ -81,5 +84,14 @@ class Configuration
     public function getBucket(): string
     {
         return $this->bucket;
+    }
+
+    public static function getExtensionConfiguration(): array
+    {
+        try {
+            return GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('audience_studio');
+        } catch (\Exception $e) {
+            return [];
+        }
     }
 }

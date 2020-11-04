@@ -15,6 +15,7 @@ namespace Leuchtfeuer\Typo3AudienceStudio\MarketingAutomation;
 
 use Bitmotion\MarketingAutomation\Dispatcher\SubscriberInterface;
 use Bitmotion\MarketingAutomation\Persona\Persona;
+ use Leuchtfeuer\Typo3AudienceStudio\Configuration;
 use Leuchtfeuer\Typo3AudienceStudio\Domain\Model\User;
 use Leuchtfeuer\Typo3AudienceStudio\Domain\Repository\PersonaRepository;
 use Leuchtfeuer\Typo3AudienceStudio\Domain\Repository\UserRepository;
@@ -40,9 +41,10 @@ class AudienceStudioSubscriber implements SubscriberInterface
         UserRepository $userRepository = null,
         PersonaRepository $personaRepository = null
     ) {
+        $extensionConfiguration = Configuration::getExtensionConfiguration();
         $this->userRepository = $userRepository ?? new UserRepository();
         $this->personaRepository = $personaRepository ?? new PersonaRepository();
-        $this->audienceStudioUserId = $_COOKIE['KUID'] ?? '';
+        $this->audienceStudioUserId = isset($extensionConfiguration['cookieName']) ? $_COOKIE[$extensionConfiguration['cookieName']] : '';
     }
 
     public function needsUpdate(Persona $currentPersona, Persona $newPersona): bool

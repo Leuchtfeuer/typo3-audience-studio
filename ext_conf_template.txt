@@ -1,0 +1,2 @@
+# cat=General; type=string; label=LLL:EXT:audience_studio/Resources/Private/Language/locallang_em.xlf:general.cookieName
+cookieName = KUID
