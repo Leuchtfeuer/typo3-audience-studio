@@ -2,9 +2,6 @@
 declare(strict_types=1);
 namespace Leuchtfeuer\Typo3AudienceStudio;
 
-use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-
 class Configuration
 {
     /**
@@ -86,12 +83,16 @@ class Configuration
         return $this->bucket;
     }
 
-    public static function getExtensionConfiguration(): array
+    /**
+     * @return string
+     */
+    public static function getCookieName(): string
     {
-        try {
-            return GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('audience_studio');
-        } catch (\Exception $e) {
-            return [];
+        $cookieName = $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['audience_studio']['cookieName'] ?? '';
+        if (empty($cookieName)) {
+            throw new \RuntimeException('Cookie name containing audience studio user id is missing', 1604563503);
         }
+
+        return $cookieName;
     }
 }
