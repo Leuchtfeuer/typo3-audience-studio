@@ -45,7 +45,7 @@ class Configuration
 
     public static function fromGlobals(): self
     {
-        $config = $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['audience_studio']['storageConfiguration'] ?? [];
+        $config = $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['audience_studio'] ?? [];
         if (empty($config)) {
             throw new \RuntimeException('Configuration for audience studio is missing', 1602767075);
         }
