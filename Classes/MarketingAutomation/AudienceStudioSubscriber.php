@@ -39,12 +39,13 @@ class AudienceStudioSubscriber implements SubscriberInterface
 
     public function __construct(
         UserRepository $userRepository = null,
-        PersonaRepository $personaRepository = null
+        PersonaRepository $personaRepository = null,
+        Configuration $configuration = null
     ) {
-        $cookieName = Configuration::getCookieName();
         $this->userRepository = $userRepository ?? new UserRepository();
         $this->personaRepository = $personaRepository ?? new PersonaRepository();
-        $this->audienceStudioUserId = $_COOKIE[$cookieName] ?? '';
+        $configuration = $configuration ?? Configuration::fromGlobals();
+        $this->audienceStudioUserId = $_COOKIE[$configuration->getCookieName()] ?? '';
     }
 
     public function needsUpdate(Persona $currentPersona, Persona $newPersona): bool

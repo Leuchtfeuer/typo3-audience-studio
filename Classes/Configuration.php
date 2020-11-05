@@ -24,16 +24,23 @@ class Configuration
      */
     private $bucket;
 
+    /**
+     * @var string
+     */
+    private $cookieName;
+
     private function __construct(
         string $key,
         string $secret,
         string $region,
-        string $bucket
+        string $bucket,
+        string $cookieName
     ) {
         $this->key = $key;
         $this->secret = $secret;
         $this->region = $region;
         $this->bucket = $bucket;
+        $this->cookieName = $cookieName;
     }
 
     public static function fromGlobals(): self
@@ -42,12 +49,16 @@ class Configuration
         if (empty($config)) {
             throw new \RuntimeException('Configuration for audience studio is missing', 1602767075);
         }
+        if (empty($config['storageConfiguration'])) {
+            throw new \RuntimeException('S3 storage configuration for audience studio is missing', 1604577970);
+        }
 
         return new self(
-            $config['key'],
-            $config['secret'],
-            $config['region'],
-            $config['bucket']
+            $config['storageConfiguration']['key'],
+            $config['storageConfiguration']['secret'],
+            $config['storageConfiguration']['region'],
+            $config['storageConfiguration']['bucket'],
+            $config['cookieName'] ?? 'KUID'
         );
     }
 
@@ -86,13 +97,8 @@ class Configuration
     /**
      * @return string
      */
-    public static function getCookieName(): string
+    public function getCookieName(): string
     {
-        $cookieName = $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['audience_studio']['cookieName'] ?? '';
-        if (empty($cookieName)) {
-            throw new \RuntimeException('Cookie name containing audience studio user id is missing', 1604563503);
-        }
-
-        return $cookieName;
+        return $this->cookieName;
     }
 }
