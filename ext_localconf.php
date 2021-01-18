@@ -10,4 +10,7 @@ call_user_func(static function () {
 
     \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\Bitmotion\MarketingAutomation\Dispatcher\Dispatcher::class)
         ->addSubscriber(\Leuchtfeuer\Typo3AudienceStudio\MarketingAutomation\AudienceStudioSubscriber::class);
+
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_fe.php']['configArrayPostProc']['audience_studio'] =
+        \Leuchtfeuer\Typo3AudienceStudio\Hooks\LocalStorageHook::class. '->addCookieScript';
 });

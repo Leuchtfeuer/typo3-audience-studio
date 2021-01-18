@@ -25,6 +25,33 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['audience_studio']['cookieName'] = 'yourc
 Verify that a cookie with the name declared in the configuration is set for your website domain.
 The adapter relies on this cookie to be present and set.
 
+#### Get cookie value from local storage
+
+Since the AudienceStudio cookie is not set on the domain where your website is available, the cookie value must be read from the 
+user's local storage. You can store the key of the local storage value in the configuration `localStorageKey`:
+
+```php
+$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['audience_studio']['localStorageKey'] = 'yourlocalstoragekey';
+```
+
+In this case, the following lines of JavaScript are written in the source code:
+
+```js
+(function() {
+    if (window.localStorage) {
+        const KUID = localStorage.getItem('YOUR_LOCAL_STORAGE_KEY');
+        if (KUID !== null) {
+            let date = new Date();
+            date.setTime(date.getTime() + (30 * 24 * 60 * 60 * 1000));
+            document.cookie = 'YOUR_COOKIE_NAME=' + KUID + ';expires=' + date.toUTCString() + ';path=/';
+        }
+    }
+})();
+```
+
+You can also add this script manually. Then you can just leave the configuration empty and the extension will not add the 
+JavaScript to your page.
+
 ### S3 Access configuration
 
 Put the following TYPO3 configuration into AdditionalConfiguration.php or any other appropriate place.
