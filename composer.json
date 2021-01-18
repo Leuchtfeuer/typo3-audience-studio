@@ -38,6 +38,9 @@
         "vendor-dir": ".Build/vendor",
         "bin-dir": ".Build/bin"
     },
+    "replace": {
+        "typo3-ter/audience-studio": "self.version"
+    },
     "extra": {
         "typo3/cms": {
             "extension-key": "audience_studio",

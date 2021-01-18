@@ -1,0 +1,12 @@
+{
+  "config": {
+    "platform": {
+      "php": "7.2.0"
+    },
+    "classmap-authoritative": true
+  },
+  "require": {
+    "aws/aws-sdk-php": "^3.158",
+    "keboola/csv": "^2.2"
+  }
+}
