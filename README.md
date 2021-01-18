@@ -34,7 +34,7 @@ user's local storage. You can store the key of the local storage value in the co
 $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['audience_studio']['localStorageKey'] = 'yourlocalstoragekey';
 ```
 
-In this case, the following lines of JavaScript are written in the source code:
+In this case, the following lines of JavaScript will be added to the source code:
 
 ```js
 (function() {

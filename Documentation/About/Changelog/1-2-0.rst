@@ -1,0 +1,33 @@
+.. include:: ../../Includes.txt
+
+==========================
+Version 1.2.0 - 2021/01/19
+==========================
+
+This is the initial TER release of this extension which is now compatible for "classic" TYPO3 installations. Besides of that, it
+is now possible to transfer the Audience Studio user ID from browser's local storage to a dedicated cookie.
+
+Download
+========
+
+Download this version from the `TYPO3 extension repository <https://extensions.typo3.org/extension/audience_studio/>`__ or from
+`GitHub <https://github.com/Leuchtfeuer/typo3-audience-studio/releases/tag/v1.2.0>`__.
+
+Added
+=====
+
+* Documenation
+* Support for non-composer setups
+* Transer user ID from :ref:`local storage <installation-controlTagAndCookies-cookieValueFromLocalStorage>` to cookie
+
+All Changes
+===========
+
+This is a list of all changes in this release::
+
+   2021-01-18 [FEATURE] Read user ID from local storage (Commit b678ba5 by Florian Wessels)
+   2021-01-18 [TASK] Exchange extension icon (Commit 25502fc by Florian Wessels)
+   2021-01-18 [FEATURE] Allow installation on non composer setups (Commit 798a0f0 by Florian Wessels)
+   2021-01-18 [TASK] Set version to 1.2.0-dev (Commit 6eac21d by Florian Wessels)
+   2021-01-18 [TASK] Add license file (Commit 7706379 by Florian Wessels)
+   2021-01-18 [TASK] Apply CS (Commit 617bdac by Florian Wessels)

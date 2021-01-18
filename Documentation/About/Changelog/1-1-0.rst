@@ -1,0 +1,34 @@
+.. include:: ../../Includes.txt
+
+==========================
+Version 1.1.0 - 2020/11/05
+==========================
+
+This is the initial release of this extension.
+
+Download
+========
+
+Download this version from the `TYPO3 extension repository <https://extensions.typo3.org/extension/audience_studio/>`__ or from
+`GitHub <https://github.com/Leuchtfeuer/typo3-audience-studio/releases/tag/v1.1.0>`__.
+
+All Changes
+===========
+
+This is a list of all changes in this release::
+
+   2020-11-05 [TASK] Use version constraint for marketing automation (Commit d2d8644 by Helmut Hummel)
+   2020-11-05 [TASK] Unify Configuration API (Commit 9a21ef4 by Helmut Hummel)
+   2020-11-05 [TASK] Move cookieName configuration to EXTCONF (Commit 8598194 by Dennis)
+   2020-11-04 [TASK ] Make cookieName configurable using extension configuration (Commit 0e3aba2 by Dennis)
+   2020-10-27 Clarify the control tag is not part of the adapter (Commit 47bde7f by Helmut Hummel)
+
+Contributors
+============
+
+Following people have contributed to this release:
+
+* Dennis Prinse
+* Helmut Hummel
+
+Thank you very much for your support. The next beer is on us! 🍻
