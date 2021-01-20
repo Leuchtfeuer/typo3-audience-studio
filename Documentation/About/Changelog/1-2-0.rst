@@ -1,7 +1,7 @@
 .. include:: ../../Includes.txt
 
 ==========================
-Version 1.2.0 - 2021/01/19
+Version 1.2.0 - 2021/01/20
 ==========================
 
 This is the initial TER release of this extension which is now compatible for "classic" TYPO3 installations. Besides of that, it
@@ -25,9 +25,15 @@ All Changes
 
 This is a list of all changes in this release::
 
+   2021-01-18 [BUGFIX] Remove unused code from ci file (Commit 68baa0d by Florian Wessels)
+   2021-01-18 [TASK] Add funding file (Commit 56d1fef by Florian Wessels)
+   2021-01-18 [TASK] Add issue templates (Commit 5820c7a by Florian Wessels)
+   2021-01-18 [TASK] Add .github workflow file (Commit c53a1e3 by Florian Wessels)
+   2021-01-18 [DOC] Add documentation (Commit cb73916 by Florian Wessels)
    2021-01-18 [FEATURE] Read user ID from local storage (Commit b678ba5 by Florian Wessels)
    2021-01-18 [TASK] Exchange extension icon (Commit 25502fc by Florian Wessels)
    2021-01-18 [FEATURE] Allow installation on non composer setups (Commit 798a0f0 by Florian Wessels)
    2021-01-18 [TASK] Set version to 1.2.0-dev (Commit 6eac21d by Florian Wessels)
    2021-01-18 [TASK] Add license file (Commit 7706379 by Florian Wessels)
    2021-01-18 [TASK] Apply CS (Commit 617bdac by Florian Wessels)
+

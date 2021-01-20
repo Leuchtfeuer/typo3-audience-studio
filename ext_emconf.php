@@ -3,7 +3,7 @@
 $EM_CONF['audience_studio'] = [
     'title' => 'Marketing Automation - Audience Studio Adapter',
     'description' => 'Add-on TYPO3 extension that enhances the "EXT:marketing_automation" TYPO3 extension by connecting it to Salseforce Audience Studio',
-    'version' => '1.2.0-dev',
+    'version' => '1.2.0',
     'category' => 'fe',
     'constraints' => [
         'depends' => [

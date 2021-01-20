@@ -27,7 +27,7 @@
         "aws/aws-sdk-php": "^3.158",
         "keboola/csv": "^2.2",
         "leuchtfeuer/marketing-automation": "^1.2.3",
-        "typo3/cms-core": "^9.5.9"
+        "typo3/cms-core": "^9.5.9 || ^10.4.6"
     },
     "autoload": {
         "psr-4": {

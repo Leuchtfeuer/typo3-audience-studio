@@ -21,7 +21,7 @@ We are currently supporting following TYPO3 versions:
    :header: "Extension Version", "TYPO3 v10 Support", "TYPO3 v9 Support", "TYPO3 v8 Support"
    :align: center
 
-        "1.x", "🙅‍️", "🙋️️", "🙅️"
+        "1.x", "🙋️️", "🙋️️", "🙅️"
 
 
 .. toctree::
